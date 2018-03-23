@@ -26,7 +26,7 @@ Classify some images
 ====================
 
 ```bash
-python classify_images.py data/test_images/catordog.jpg data/test_images/catordog2.jpg
+python classify_images.py data/test_images/*
 ```
 
 ![alt text](./data/test_images/catordog.jpg "Image 1")
