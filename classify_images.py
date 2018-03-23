@@ -1,7 +1,7 @@
 import argparse
-import os
 import cv2
 import numpy as np
+import os.path
 
 from model import get_model, checkpoint_filename, classes
 
@@ -14,6 +14,9 @@ def main():
     image_paths = [os.path.abspath(img) for img in args.images]
 
     # load model weights
+    if not os.path.isfile(checkpoint_filename):
+        print('ERROR: model checkpoint does not exist, please run training first: python train.py')
+        exit()
     print('INFO: loading model and weights')
     model = get_model()
     model.load_weights(checkpoint_filename)
