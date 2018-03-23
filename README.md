@@ -32,7 +32,7 @@ python classify_images.py data/test_images/catordog.jpg data/test_images/catordo
 ![alt text](./data/test_images/catordog.jpg "Image 1")
 
 ```
-Prediction for /home/yurig/Workspace/keras_cifar/data/test_images/catordog.jpg:
+Prediction for data/test_images/catordog.jpg:
 Class cats: 99.6%
 Class dogs: 0.4%
 ```
@@ -40,7 +40,7 @@ Class dogs: 0.4%
 ![alt text](./data/test_images/catordog2.jpg "Image 2")
 
 ```
-Prediction for /home/yurig/Workspace/keras_cifar/data/test_images/catordog2.jpg:
+Prediction for data/test_images/catordog2.jpg:
 Class cats: 0.4%
 Class dogs: 99.6%
 ```
