@@ -110,5 +110,3 @@ data/validation.tar.gz
 
 .DS_Store
 .idea/
-
-checkpoints/*
