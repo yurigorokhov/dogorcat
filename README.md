@@ -1,7 +1,7 @@
 Cat or Dog
 ==========
 
-Model base on InceptionV3
+Model based on InceptionV3 pre-trained on ImageNet, with last few layers refined on cat/dog images.
 
 Installation
 ============
