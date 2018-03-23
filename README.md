@@ -44,3 +44,11 @@ Prediction for data/test_images/catordog2.jpg:
 Class cats: 0.4%
 Class dogs: 99.6%
 ```
+
+![alt text](./data/test_images/eski.jpg "Eski!")
+
+```
+Prediction for data/test_images/eski.jpg:
+Class cats: 0.0%
+Class dogs: 100.0%
+```
