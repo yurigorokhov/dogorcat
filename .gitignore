@@ -105,6 +105,8 @@ venv.bak/
 
 data/train
 data/validation
+data/train.tar.gz
+data/validation.tar.gz
 
 .DS_Store
 .idea/
