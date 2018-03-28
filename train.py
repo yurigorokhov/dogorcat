@@ -2,6 +2,7 @@ from keras.preprocessing.image import ImageDataGenerator
 from keras.callbacks import ModelCheckpoint, EarlyStopping
 
 from model import get_model, checkpoint_filename, classes
+from util import plot_history
 
 
 def main():
@@ -41,28 +42,23 @@ def main():
         mode='auto',
         period=1
     )
-    earlystopping_callback = EarlyStopping(
-        monitor='val_loss',
-        min_delta=0.001,
-        patience=0,
-        verbose=0,
-        mode='auto'
-    )
 
     # train the model
     model = get_model()
     print('Training...')
-    model.fit_generator(
+    history = model.fit_generator(
         train_generator,
-        steps_per_epoch=600,
-        epochs=50,
+        steps_per_epoch=1200,
+        epochs=20,
         validation_data=validation_generator,
         validation_steps=200,
         use_multiprocessing=True,
-        shuffle=True,
-        callbacks=[checkpoint_callback, earlystopping_callback]
+        shuffle=False,
+        callbacks=[checkpoint_callback]
     )
+    plot_history(history, out_dir='./out')
 
 
 if __name__ == "__main__":
     main()
+    

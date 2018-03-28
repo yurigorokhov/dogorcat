@@ -3,9 +3,17 @@ from keras.models import Model
 from keras import optimizers
 from keras.applications import inception_v3
 
+import tensorflow as tf
+
 checkpoint_filename = 'checkpoints/checkpoint.h5'
 classes = ['cats', 'dogs']
 
+
+def sigmoid_crossentropy(output, target):
+    return tf.nn.sigmoid_cross_entropy_with_logits(
+        labels=target,
+        logits=output
+    )
 
 def get_model():
 
@@ -33,12 +41,12 @@ def get_model():
     x = Dense(128)(x)
     x = BatchNormalization()(x)
     x = Activation('relu')(x)
-    predictions = Dense(len(classes), activation='softmax')(x)
+    predictions = Dense(len(classes), activation='sigmoid')(x)
 
     # create model
     model = Model(input=inception.input, output=predictions)
     model.compile(
-        loss='categorical_crossentropy',
+        loss=sigmoid_crossentropy,
         optimizer=optimizers.Adam(lr=0.001),
         metrics=['accuracy']
     )
