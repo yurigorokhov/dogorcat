@@ -48,12 +48,12 @@ def main():
     print('Training...')
     history = model.fit_generator(
         train_generator,
-        steps_per_epoch=1200,
+        steps_per_epoch=50,
         epochs=20,
         validation_data=validation_generator,
         validation_steps=200,
         use_multiprocessing=True,
-        shuffle=False,
+        shuffle=True,
         callbacks=[checkpoint_callback]
     )
     plot_history(history, out_dir='./out')
@@ -61,4 +61,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    

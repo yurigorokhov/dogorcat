@@ -22,6 +22,15 @@ Train
 python train.py
 ```
 
+Accuracy/Loss
+=============
+
+These images will be saved in `./out/`
+
+![alt text](./accuracy.png "Accuracy")
+![alt text](./loss.png "Loss")
+
+
 Classify some images
 ====================
 
