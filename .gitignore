@@ -107,6 +107,9 @@ data/train
 data/validation
 data/train.tar.gz
 data/validation.tar.gz
+data/rotated_train
+data/rotated_validation
 
 .DS_Store
 .idea/
+.vscode/

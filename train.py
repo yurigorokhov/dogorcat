@@ -1,7 +1,7 @@
 from keras.preprocessing.image import ImageDataGenerator
 from keras.callbacks import ModelCheckpoint, EarlyStopping
 
-from model import get_model, checkpoint_filename, classes
+from model import get_model, checkpoint_filename, classes, out
 from util import plot_history
 
 
@@ -49,14 +49,14 @@ def main():
     history = model.fit_generator(
         train_generator,
         steps_per_epoch=50,
-        epochs=20,
+        epochs=5,
         validation_data=validation_generator,
         validation_steps=200,
         use_multiprocessing=True,
         shuffle=True,
         callbacks=[checkpoint_callback]
     )
-    plot_history(history, out_dir='./out')
+    plot_history(history, out_dir=out)
 
 
 if __name__ == "__main__":

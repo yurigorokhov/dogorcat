@@ -61,3 +61,10 @@ Prediction for data/test_images/eski.jpg:
 Class cats: 0.0%
 Class dogs: 100.0%
 ```
+
+Rotation prediction
+===================
+
+In this experiment we attempt to predict the rotation of the image. The idea is that in order to be able to predict rotation, the network must be learning features that are useful for classification as well. We will train a network to predict the degrees of rotation (0, 90, 180, 270). By using these 90 degree rotations we avoid the complications of cropping the image correctly without introducing artifacts. 
+
+After training such a network, we will attempt to re-use it for classification by training a few additional layers on top of it on the classification task. We hope to see an improvment in classification accuracy, or at least fast training, which will show that the rotation task is learning something about what is inside the image.
